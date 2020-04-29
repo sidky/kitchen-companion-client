@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kitchen_companion/splash/splashscreen.dart';
+import 'package:kitchen_companion/storage/cupboard.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen()
     );
   }
 }
@@ -59,6 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    new Cupboard().registerListeners().listen((data) {
+      print(data.documents[0].reference.documentID);
+      print(data.documents.length);
+    });
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
