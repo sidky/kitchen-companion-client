@@ -33,9 +33,4 @@ class LoginScreen extends StatelessWidget {
       ),
       );
   }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 }

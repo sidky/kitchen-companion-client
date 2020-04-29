@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kitchen_companion/login/login.dart';
+import 'package:kitchen_companion/shopping/shoppinglist.dart';
 import 'package:kitchen_companion/util/auth.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -17,6 +18,8 @@ class SplashScreen extends StatelessWidget {
     new AuthUtil().isLoggedIn().then((loggedIn) {
       if (!loggedIn) {
         Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      } else {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ShoppingListScreen()));
       }
     });
   }

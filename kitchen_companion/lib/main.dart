@@ -62,10 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    new Cupboard().registerListeners().listen((data) {
-      print(data.documents[0].reference.documentID);
-      print(data.documents.length);
-    });
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
