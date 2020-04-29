@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kitchen_companion/model/itemType.dart';
+import 'package:kitchen_companion/model/kitchenItem.dart';
 
 import '../storage/cupboard.dart';
 
@@ -22,7 +23,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
   }
 
   void _test() {
-    Cupboard().registerListeners().listen((List<KitchenItemType> d) {
+    Cupboard().kitchenItems().listen((List<KitchenItem> d) {
       for (var i in d) {
         print(i);
       }
