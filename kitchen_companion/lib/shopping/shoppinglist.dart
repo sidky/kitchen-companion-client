@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kitchen_companion/model/itemType.dart';
 import 'package:kitchen_companion/model/kitchenItem.dart';
+import 'package:kitchen_companion/model/shoppingListItem.dart';
 
 import '../storage/cupboard.dart';
 
@@ -23,7 +24,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
   }
 
   void _test() {
-    Cupboard().kitchenItems().listen((List<KitchenItem> d) {
+    Cupboard().shoppingList().listen((List<ShoppingListItem> d) {
       for (var i in d) {
         print(i);
       }
